@@ -67,6 +67,7 @@ class Key: Hashable {
     var uppercaseOutput: String?
     var lowercaseOutput: String?
     var toMode: Int? //if the key is a mode button, this indicates which page it links to
+    var otherActionKey: String?
     
     var isCharacter: Bool {
         get {

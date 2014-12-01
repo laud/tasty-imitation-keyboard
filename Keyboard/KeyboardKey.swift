@@ -152,7 +152,7 @@ class KeyboardKey: UIControl {
             
             self.label.textAlignment = NSTextAlignment.Center
             self.label.baselineAdjustment = UIBaselineAdjustment.AlignCenters
-            self.label.font = self.label.font.fontWithSize(22)
+            self.label.font = UIFont(name: "NotoSans", size: 22)
             self.label.adjustsFontSizeToFitWidth = true
             self.label.minimumScaleFactor = CGFloat(0.1)
             self.label.userInteractionEnabled = false
@@ -418,7 +418,7 @@ class KeyboardKey: UIControl {
             var popupLabel = UILabel()
             popupLabel.textAlignment = self.label.textAlignment
             popupLabel.baselineAdjustment = self.label.baselineAdjustment
-            popupLabel.font = self.label.font.fontWithSize(22 * 2)
+            popupLabel.font = UIFont(name: "NotoSans", size: 22 * 2)
             popupLabel.adjustsFontSizeToFitWidth = self.label.adjustsFontSizeToFitWidth
             popupLabel.minimumScaleFactor = CGFloat(0.1)
             popupLabel.userInteractionEnabled = false

@@ -10,7 +10,7 @@ import UIKit
 import AudioToolbox
 
 let metrics: [String:Double] = [
-    "topBanner": 30
+    "topBanner": 50
 ]
 func metric(name: String) -> CGFloat { return CGFloat(metrics[name]!) }
 
@@ -728,7 +728,7 @@ class KeyboardViewController: UIInputViewController {
                         let offset = min(3, countElements(beforeContext))
                         var index = beforeContext.endIndex
                         
-                        for (var i = 0; i < offset; i += 1) {
+                        for i in 0..<offset {
                             index = index.predecessor()
                             let char = beforeContext[index]
                             
@@ -803,8 +803,6 @@ class KeyboardViewController: UIInputViewController {
     // a settings view that replaces the keyboard when the settings button is pressed
     func createSettings() -> ExtraView? {
         // note that dark mode is not yet valid here, so we just put false for clarity
-        var settingsView = DefaultSettings(globalColors: self.dynamicType.globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-        settingsView.backButton?.addTarget(self, action: Selector("toggleSettings"), forControlEvents: UIControlEvents.TouchUpInside)
-        return settingsView
+        return nil
     }
 }
