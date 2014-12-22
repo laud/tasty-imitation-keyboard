@@ -427,9 +427,9 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             Key.KeyType.Space,
             Key.KeyType.Return:
                 key.label.adjustsFontSizeToFitWidth = true
-                key.label.font = key.label.font.fontWithSize(16)
+                key.label.font = UIFont(name: "NotoSans", size: 16)
             default:
-                key.label.font = key.label.font.fontWithSize(22)
+                key.label.font = UIFont(name: "NotoSans", size: 22)
             }
             
             // label inset
@@ -466,7 +466,7 @@ class KeyboardLayout: NSObject, KeyboardKeyProtocol {
             if model.type == Key.KeyType.Settings {
                 if let imageKey = key as? ImageKey {
                     if imageKey.image == nil {
-                        var gearImage = UIImage(named: "gear")
+                        var gearImage = UIImage(named: "gear")?.imageWithRenderingMode(.AlwaysTemplate)
                         var settingsImageView = UIImageView(image: gearImage)
                         imageKey.image = settingsImageView
                     }
